@@ -1,4 +1,4 @@
-package crudpessoas.Repository;
+package crudpessoas.repository;
 
 import crudpessoas.model.Pessoa;
 import org.springframework.data.jpa.repository.JpaRepository;
