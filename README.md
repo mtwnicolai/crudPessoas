@@ -24,8 +24,7 @@ O projeto foi criado com o objetivo de praticar o desenvolvimento de APIs REST, 
 
 ## Endpoints
 
-A API utiliza por enquanto apenas a rota base `/pessoas`. Futuramente será criada mais rotas, uma para cada função.
-
+A API utiliza apenas a rota base `/pessoas`.
 | Método | Endpoint | Descrição |
 |--------|----------|-----------|
 | GET | `/pessoas` | Lista as pessoas cadastradas |
