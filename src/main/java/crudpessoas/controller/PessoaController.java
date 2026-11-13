@@ -3,6 +3,7 @@ package crudpessoas.controller;
 import crudpessoas.model.Pessoa;
 import crudpessoas.repository.PessoaRepository;
 import crudpessoas.service.PessoaService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,7 +24,9 @@ public class PessoaController {
 
     // Create
     @PostMapping
-    public ResponseEntity<Pessoa> cadastrar(@RequestBody Pessoa pessoa){
+    public ResponseEntity<Pessoa> cadastrar(
+            @Valid @RequestBody Pessoa pessoa){
+
         Pessoa cadastrada = service.cadastrar(pessoa);
         return ResponseEntity.status(201).body(cadastrada);
     }
@@ -46,7 +49,7 @@ public class PessoaController {
     @PutMapping("/{id}")
     public ResponseEntity<Pessoa> atualizar(
             @PathVariable Long id,
-            @RequestBody Pessoa dados){
+            @Valid @RequestBody Pessoa dados){
 
         return service.atualizar(id, dados)
                 .map(ResponseEntity::ok)
