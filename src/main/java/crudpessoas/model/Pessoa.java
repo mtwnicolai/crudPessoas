@@ -2,6 +2,7 @@ package crudpessoas.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
+import org.hibernate.validator.constraints.br.CPF;
 
 @Entity
 @Table(name = "pessoa")
@@ -12,7 +13,9 @@ public class Pessoa{
     @GeneratedValue(strategy = GenerationType.IDENTITY) // será gerada automticamente,
     private long id;                                   // usando o mecanismo de geração de indentidade
 
+
     @Column(nullable = false)
+    @CPF
     @NotBlank(message = "O CPF é obrigatório para realizar o cadastro!")
     @Size(min = 11, max = 11, message = "O CPF tem 11 dígitos, há algo de errado...")
     private String CPF;
