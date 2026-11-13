@@ -79,6 +79,3 @@ Por padrão, a API estará disponível em:
 
 Este repositório faz parte dos meus estudos em desenvolvimento backend com Java, com foco em APIs REST, integração com bancos de dados relacionais e boas práticas de desenvolvimento.
 
-## Autor
-
-Desenvolvido por [Matheus Nicolai](https://github.com/mtwnicolai).
