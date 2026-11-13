@@ -2,6 +2,7 @@ package crudpessoas.service;
 
 import crudpessoas.model.Pessoa;
 import crudpessoas.repository.PessoaRepository;
+import crudpessoas.exception.DuplicateResourceException;
 
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,15 @@ public class PessoaService {
 
     // Create
     public Pessoa cadastrar(Pessoa pessoa){
+
+        if(repository.existsByCPF(pessoa.getCPF())){
+            throw new DuplicateResourceException("Já há uma pessoa com este CPF!");
+        }
+
+        if(repository.existsByEmail(pessoa.getEmail())) {
+            throw new DuplicateResourceException("Este e-mail já está cadastrado!");
+
+        }
         return repository.save(pessoa);
     }
 
